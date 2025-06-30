@@ -1,3 +1,55 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,main, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box; /* Garante box-sizing em todo o projeto */
+
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	margin-left: 25px;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
 /*Botão StarWars*/
 body{
   background-color: #ABAF9D;
@@ -463,10 +515,6 @@ label{
   left: 8%;
 }
 
-.ring.two:after {
-  top: 100%;
-}
-
 .ring.three {
   height: 37px;
   width: 80px;
@@ -547,7 +595,7 @@ label{
 
 .slider:checked:active:not(:hover)+.switch .antennas {
   -webkit-transform: translate(-30px, 20px) rotateZ(-17deg);
-  -ms-transform: translate(-30px, 20px) rotate(-17deg);
+  -ms-transform: translate(-30px, 20px) rotate(17deg);
   transform: translate(-25px, 25px) rotateZ(-17deg);
 }
 
@@ -656,7 +704,7 @@ label{
 .contato{
   display: inline-block;
   text-align: left;
-  margin-right: 10px;    
+  margin-right: 10px;
 }
 
 .contato p{
@@ -667,14 +715,7 @@ label{
   margin-bottom: 50px;
 }
 label::after{
-  content: 'Clique Aqui ☝';
-  position: absolute;
-  bottom: -26px;
-  right: 35px;
-  color:#2a76bc;
-  font-size: 0.92em;
-  
-  animation: girar 2.5s infinite;
+  content: '';
 }
 
 @keyframes girar{
@@ -728,8 +769,26 @@ label::after{
 
 .contato p{
   font-size: 1.225rem;
-  color: rgba(0, 0, 0, 0.641);
+  color: black;
 }
+
+/* Novo estilo para o botão de download */
+.btn-download {
+    background-color: #286fb1; /* Cor semelhante aos seus links */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 20px; /* Para dar um espaçamento, ajuste conforme necessário */
+    transition: background-color 0.3s ease;
+}
+
+.btn-download:hover {
+    background-color: #1b5b9bde;
+}
+
 
 /*main*/
 
@@ -769,8 +828,8 @@ p{
 }
 
 .colunas section::before{
-  animation: animacao 2.7s linear forwards;
-  animation-delay: 3s;
+  animation: animacao 0.5s linear forwards;
+  animation-delay: 0s;
 }
 
 @keyframes animacao{
@@ -813,9 +872,8 @@ p{
 
 }
 .colunas section::after{
-  animation: animacao2 2.7s linear forwards;
-  animation-delay: 3s;
-  
+  animation: animacao2 0.5s linear forwards;
+  animation-delay: 0s;
 }
 @keyframes animacao2{
   0%{
@@ -895,10 +953,34 @@ h4{
   text-decoration: none;
 }
 
+/* Perfil Profissional */
 .perfil-profissional{
   font-size: 1rem;
   line-height: normal;
   min-height: 350px;
+  padding: 40px 30px;
+}
+
+.perfil-profissional h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-decoration: underline;
+  color: #000;
+  text-align: center;
+}
+
+.perfil-profissional h3 {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-decoration: underline;
+    text-align: left;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+    color: #000;
 }
 
 /*rodapé*/
@@ -928,7 +1010,7 @@ h4{
   align-items: center;
   text-align: left;
   position: relative;
-    
+
 }
 
 .footer-name p,span{
@@ -952,7 +1034,7 @@ h4{
   height: 70px;
   width: 270px;
 }
-  
+
 .redes-sociais svg {
   position: absolute;
   display: flex;
@@ -965,7 +1047,7 @@ h4{
   z-index: 2;
   cursor: pointer;
 }
-  
+
 .redes-sociais .social-instagram,.redes-sociais .social-github,.redes-sociais .social-linkedin,.redes-sociais .social-wpp {
   position: relative;
   display: flex;
@@ -978,48 +1060,48 @@ h4{
   transition: 0.25s;
   border-radius: 50px;
 }
-  
+
 .redes-sociais svg {
   transform: scale(1);
 }
-  
+
 .redes-sociais .social-instagram:hover {
   background: #f09433;
   background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-  background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+  background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2743 50%,#cc2366 75%,#bc1888 100%);
   background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
   animation: bounce_613 0.4s linear;
 }
-  
+
 .redes-sociais .social-github:hover {
   background-color: #121314;
   animation: bounce_613 0.4s linear;
 }
-  
+
 .redes-sociais .social-linkedin:hover {
   background-color: #0a66c2;
   animation: bounce_613 0.4s linear;
 }
-  
+
 .redes-sociais .social-wpp:hover {
   background-color: #12a50b;
   animation: bounce_613 0.4s linear;
 }
-  
+
 @keyframes bounce_613 {
   40% {
     transform: scale(1.4);
   }
-  
+
   60% {
     transform: scale(0.8);
   }
-  
+
   80% {
     transform: scale(1.2);
   }
-  
+
   100% {
     transform: scale(1);
   }
@@ -1044,6 +1126,21 @@ body.active .contato p{
   color: #0e7deb;
 }
 
+/* Ajustes para o botão de download no modo escuro */
+body.active .btn-download {
+    background-color: #0e7deb;
+}
+
+body.active .btn-download:hover {
+    background-color: #0056b3;
+}
+
+/* Ajustes para Dark Mode */
+body.active .perfil-profissional h2,
+body.active .perfil-profissional h3 {
+  color: rgb(219, 219, 219);
+}
+
 /*Barra de Scroll*/
 
 ::-webkit-scrollbar {
@@ -1058,17 +1155,17 @@ body.active .contato p{
 
 ::-webkit-scrollbar-track {
 	background-color: transparent;
-}  
+}
 
 @media screen and (max-width: 800px) {
   /*Botão StarWars*/
   .switch {
-    --toggle-size: 1;                
-  } 
+    --toggle-size: 1;
+  }
   label{
     align-self: center;
-  }   
-    
+  }
+
     /*cabeçalho*/
   .cabecalho-bg{
     padding: 15px 15px 0;
@@ -1125,17 +1222,32 @@ body.active .contato p{
     width: auto;/**/
   }
 
+  /* Estilos para o Perfil Profissional em telas menores (ajustes gerais) */
+  .perfil-profissional {
+    padding: 20px 15px;
+  }
+
+  .perfil-profissional h2 {
+    font-size: 1.8rem;
+  }
+
+  .perfil-profissional h3 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    padding: 0 10px;
+  }
+
   /*Rodapé*/
   .footer{
-    
+
     padding: 10px 20px 15px 20px;/**/
     flex-direction: column-reverse;/**/
-    
+
   }
 
   .footer-name{
-    
-    font-size: 1.3rem;/**/ 
+
+    font-size: 1.3rem;/**/
   }
 
   .nome{
@@ -1144,7 +1256,7 @@ body.active .contato p{
 
   .coroa{
     margin: -4px 2px 2px 2px;
-  }       
+  }
 }
 
 @media screen and (max-width: 410px) {
@@ -1156,11 +1268,11 @@ body.active .contato p{
   /*Footer*/
   .footer{
     padding: 10px 0;
-    
+
   }
 
   .footer-name{
-    font-size: 1rem;/**/ 
+    font-size: 1rem;/**/
   }
 
   .nome{
@@ -1173,76 +1285,275 @@ body.active .contato p{
 
   .redes-sociais svg {
     width: 40%;
-  }  
+  }
+
+  .perfil-profissional h3 {
+    font-size: 1rem;
+  }
+
+  /* Botão de download em telas menores */
+  .btn-download {
+    width: 100%;
+    margin-top: 15px;
+  }
 }
 
+/* =============================================
+   OTIMIZAÇÕES CRÍTICAS E ABRANGENTES PARA IMPRESSÃO (PDF)
+   Esta seção é projetada para anular estilos complexos da web
+   e criar um layout linear e limpo para o PDF, garantindo
+   quebras de página corretas e legibilidade em um formato A4.
+   =============================================
+*/
 @media print{
-  body.active{
-    color: black;
-  }
-  /*Botão StarWars*/
-  label{
-    display: none;
-  }   
-    
-  /*cabeçalho*/
-  .cabecalho-bg{
-    padding: 15px 15px 0;
-  }
-
-  .cabecalho{
-    width: 50%;
-    padding: 0px;
-    flex-direction: column;
+  /* 1. Reset Global e Propriedades da Div #pdf-content para A4 */
+  body, #pdf-content {
+    background-color: white !important;
+    color: black !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-family: 'Open Sans', sans-serif !important;
+    font-size: 9pt !important; /* REDUZIDO: Tamanho de fonte base para o corpo */
+    width: 210mm !important; /* Largura de uma página A4 */
+    min-height: 297mm !important; /* Garante que a div tem pelo menos a altura de uma A4 */
+    overflow: hidden !important; /* Esconde qualquer overflow no nível do documento, o html2pdf.js lida com as páginas */
+    box-sizing: border-box !important;
+    position: relative !important; /* Necessário para page-break */
   }
 
-  .foto{
-    width: 100%;
-    margin: 0;
+  /* Remove margens e paddings padrão de todos os elementos para controlar estritamente */
+  *, *::before, *::after {
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+    background-color: transparent !important; /* Garante que todos os fundos sejam brancos */
+    color: black !important; /* Garante que todo o texto seja preto */
+    border: none !important; /* Remove todas as bordas */
+    box-shadow: none !important; /* Remove todas as sombras */
+    text-decoration: none !important; /* Remove sublinhados por padrão */
+    /* Desabilitar transições e animações para impressão */
+    transition: none !important;
+    animation: none !important;
   }
 
-  .foto img{
-    width: 100%;
-    border-radius: 0;
-  }
-  .contato{
-    display: inline-block;
-    text-align: left;
-    margin-right: 10px;
-    flex-basis: 0px;
-    padding: 20px 5px;
-    text-align: center;
-  }
-  .contato p{
-    margin-bottom: 10px;
-  }
-
-  /*main*/
-  main{
-    width: 100%;
-    padding: 0 15px 15px 15px;
-    margin: 0 auto;
-    max-width: 1200px;
+  /* 2. Esconder Elementos Não Essenciais na Impressão */
+  label, .btn-download, .footer-bg, .switch, .moons, .suns, .sand,
+  .bb8, .antennas, .head .eyes, .head .stripe.detail,
+  .ball .lines, .ball .ring, .shadow, /* Partes específicas do BB8 e cenário */
+  ::-webkit-scrollbar, ::-webkit-scrollbar-thumb, ::-webkit-scrollbar-track,
+  .redes-sociais { /* Esconde todas as redes sociais */
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 0 !important; /* Garante que não ocupem espaço de linha */
   }
 
-  .colunas{
-    flex-direction: column;/**/
+  /* 3. Ajustar o Cabeçalho para Impressão (Layout Linear e Simples) */
+  .cabecalho-bg {
+    background-color: white !important;
+    padding: 5mm 10mm 0 !important; /* REDUZIDO: Margem superior e laterais */
+    width: 100% !important;
+    box-sizing: border-box !important;
+    page-break-after: avoid !important; /* Evita quebrar a página logo após o cabeçalho */
+    display: block !important;
   }
 
-  section{
-    margin: 10px 0px;/**/
+  .cabecalho {
+    width: 100% !important;
+    padding: 0 !important;
+    display: block !important; /* Força layout de bloco */
+    text-align: center !important; /* Centraliza o conteúdo do cabeçalho */
+    margin: 0 auto !important;
   }
 
-  h2{
-    margin-bottom: 15px;/**/
+  .foto {
+    display: block !important; /* Imagem em bloco */
+    margin: 0 auto 3mm auto !important; /* REDUZIDO: Centraliza e adiciona margem inferior */
+    width: 40mm !important; /* REDUZIDO: Tamanho fixo para a imagem */
+    height: auto !important;
+    overflow: hidden !important;
   }
 
-  .coluna-direita section{
-    width: auto;/**/
+  .foto img {
+    width: 100% !important;
+    height: auto !important;
+    border-radius: 50% !important;
+    border: 1px solid #ccc !important; /* Borda sutil */
+    object-fit: cover !important;
   }
 
-  /*Rodapé*/
-  .footer{
-    display: none;
+  .contato {
+    text-align: center !important; /* Centraliza o texto de contato */
+    padding: 0 !important;
+    margin: 0 auto 5mm auto !important; /* REDUZIDO: Margem inferior para separar do conteúdo */
+    display: block !important;
+  }
+
+  .contato h1 {
+    font-size: 13pt !important; /* REDUZIDO: Tamanho de fonte para o nome */
+    margin-bottom: 2pt !important; /* REDUZIDO */
+    line-height: 1.1 !important; /* REDUZIDO */
+  }
+
+  .contato p {
+    font-size: 9pt !important; /* REDUZIDO */
+    margin-bottom: 3pt !important; /* REDUZIDO */
+    color: black !important;
+    line-height: 1.1 !important; /* REDUZIDO */
+  }
+
+  .contato ul {
+    margin: 0 auto !important;
+    padding: 0 !important;
+    list-style: none !important; /* Remove bullet points */
+  }
+
+  .contato li {
+    font-size: 8pt !important; /* REDUZIDO */
+    margin-bottom: 2pt !important; /* REDUZIDO */
+    list-style: none !important; /* Remove bullet points */
+    color: black !important;
+    line-height: 1.1 !important; /* REDUZIDO */
+  }
+
+  .contato a {
+    color: #286fb1 !important; /* Cor dos links */
+    text-decoration: underline !important; /* Links sublinhados */
+    font-size: 8pt !important; /* REDUZIDO */
+    font-style: normal !important;
+  }
+
+  /* 4. Ajustes para o Conteúdo Principal (Layout Linear e Quebras de Página Rigorosas) */
+  main {
+    width: 100% !important;
+    padding: 0 10mm !important; /* REDUZIDO: Paddings laterais para conteúdo, mantendo 10mm em cada lado */
+    box-sizing: border-box !important;
+    display: block !important;
+  }
+
+  .colunas {
+    display: block !important; /* Garante empilhamento vertical total */
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .coluna-esquerda,
+  .coluna-direita {
+    width: 100% !important; /* Força 100% de largura para ambas as colunas */
+    float: none !important; /* Remove qualquer float residual */
+    padding: 0 !important; /* Sem padding nessas divs, o padding vai nas sections */
+    margin: 0 !important; /* Sem margem nessas divs */
+    display: block !important; /* Garante comportamento de bloco */
+  }
+
+  /* Seções: Definir um fluxo claro e quebras de página controladas */
+  .colunas section {
+    display: block !important;
+    padding: 3mm 0 !important; /* REDUZIDO: Padding vertical interno para as seções */
+    margin: 0 0 3mm 0 !important; /* REDUZIDO: Margem inferior para separar seções */
+    page-break-inside: avoid !important; /* Tenta evitar quebrar a seção no meio */
+    page-break-after: auto !important; /* Permite quebras automáticas após a seção */
+    background-color: transparent !important;
+    border: none !important; /* Remove bordas visuais */
+    box-shadow: none !important; /* Remove sombras */
+    /* Anula as animações das bordas para impressão */
+    animation: none !important;
+  }
+
+  /* Para quebras de página mais explícitas antes de novas seções maiores */
+  .especialidades, .cursos, .experiencias, .formacao, .coluna-direita .experiencias {
+    page-break-before: auto !important; /* Pode forçar nova página, mas com cautela */
+    margin-top: 5mm !important; /* REDUZIDO: Mais espaço antes de seções que podem iniciar nova página */
+  }
+
+  /* Ajuste para a primeira seção não ter margem superior extra se for a primeira coisa na página */
+  .perfil-profissional {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    margin-bottom: 5pt !important; /* REDUZIDO */
+  }
+
+  /* Conteúdo de Texto e Listas */
+  h2 {
+    font-size: 12pt !important; /* REDUZIDO: Tamanho de fonte para títulos de seção */
+    margin-bottom: 3pt !important; /* REDUZIDO */
+    text-decoration: underline !important;
+    color: black !important;
+    page-break-after: avoid !important; /* Tenta manter o título com o conteúdo */
+    text-align: left !important;
+  }
+
+  h3 {
+    font-size: 10pt !important; /* REDUZIDO: Subtítulos */
+    margin-bottom: 3pt !important; /* REDUZIDO */
+    text-decoration: none !important; /* REMOVIDO: sublinhado */
+    color: black !important;
+    text-align: left !important;
+  }
+
+  h4 {
+    font-size: 9pt !important; /* REDUZIDO: Títulos de cargo/projeto */
+    margin-bottom: 2pt !important; /* REDUZIDO */
+    color: black !important;
+    text-align: left !important;
+  }
+
+  p {
+    font-size: 9pt !important; /* REDUZIDO */
+    line-height: 1.2 !important; /* REDUZIDO: Espaçamento de linha */
+    margin-bottom: 3pt !important; /* REDUZIDO */
+    color: black !important;
+    text-align: justify !important; /* Texto justificado para uma aparência mais formal */
+  }
+
+  ul {
+    list-style: disc !important; /* Garante bullet points padrão para listas */
+    margin-left: 8mm !important; /* REDUZIDO: Indentação para listas */
+  }
+
+  .colunas li {
+    font-size: 9pt !important; /* REDUZIDO */
+    margin-bottom: 2pt !important; /* REDUZIDO */
+    line-height: 1.2 !important; /* REDUZIDO */
+    color: black !important;
+  }
+
+  /* Ajustes específicos para o Perfil Profissional (para um bloco de texto inicial) */
+  .perfil-profissional h2 {
+    font-size: 14pt !important; /* REDUZIDO: Título principal maior */
+    margin-bottom: 5pt !important; /* REDUZIDO */
+  }
+  .perfil-profissional h3 {
+    font-size: 10pt !important; /* REDUZIDO: Subtítulo principal maior */
+    margin-bottom: 5pt !important; /* REDUZIDO */
+  }
+
+  /* Ajustes para a seção de projetos e experiências (cargos) */
+  .cargo {
+    margin: 3pt 0 !important; /* REDUZIDO */
+    page-break-inside: avoid !important; /* Evita quebrar um cargo no meio */
+  }
+  .ver-projeto {
+    font-size: 8pt !important; /* REDUZIDO */
+    margin-top: 3pt !important; /* REDUZIDO */
+    color: #286fb1 !important;
+    text-decoration: underline !important;
+    display: block !important;
+    text-align: left !important;
+  }
+
+  /* Garantir que containers como formacao-container também evitem quebras internas */
+  .formacao-container {
+    page-break-inside: avoid !important;
+    margin-bottom: 3pt !important; /* REDUZIDO */
+  }
+  .experiencias ul li,
+  .cursos ul li {
+    page-break-inside: avoid !important;
+    margin-bottom: 3pt !important; /* REDUZIDO */
   }
 }
